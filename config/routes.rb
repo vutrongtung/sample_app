@@ -1,5 +1,17 @@
 SampleApp::Application.routes.draw do
-  # The priority is based upon order of creation:
+  get "photos/create"
+
+  get "photos/edit"
+
+  get "photos/show"
+
+  get "photos/index"
+
+  get "static_pages/home"
+
+  get "static_pages/help"
+  resource :photos
+  #The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
