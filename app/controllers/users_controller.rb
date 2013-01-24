@@ -8,13 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user=User.new(params[:user])
     if @user.save
+      sign_in @user
       flash[:success] = "Welcome to the Sample App!"
-      binding.pry
-      redirect_to "/users/#{@user.id}"
+      redirect_to @user
       #handle asuccessful save
-      binding.pry
+
 
     else
       #flash[:error] = "fuck error!"
